@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("/assets/images/bg.jpg");
+  background-size: cover; /* make the background image cover the entire page */
+  background-position: center; /* center the background image */
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  padding-top: 120px;
+}
+
+
+
+
+
+
+

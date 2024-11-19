@@ -1,0 +1,412 @@
+
+
+.community{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 150px;
+
+    transform: scale(0.5);
+margin-top: -200px;
+filter: blur(5px);
+animation: revealAndZoom 1.5s ease-in-out forwards;
+ }
+
+
+ @keyframes revealAndZoom {
+  0% {
+    transform: scale(0.5);
+    margin-top: -200px;
+    filter: blur(5px);
+  }
+  50% {
+    transform: scale(1);
+    margin-top: 0;
+    filter: none;
+  }
+  100% {
+    transform: scale(1);
+    margin-top: 0;
+    filter: none;
+  }
+  }
+
+ .community .header{
+     width: 100%;
+     height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #eee;
+    box-shadow: 0 3px 13px 0 rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    /* z-index: 900; */
+
+ }
+ .community .header .imgNigh{
+     width: 30px;
+     height:30px;
+    }
+    .community .header .search{
+        width: 500px;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform:translate(-50%, -50%) ;
+    }
+    .community .header .search input{
+        width: 100%;
+        height: 60%;
+        padding-left: 20px;
+        box-sizing: border-box;
+        box-shadow: 0 3px 13px 0 rgba(0, 0, 0, .2);
+        border: .6px solid rgba(0, 0, 0, 0.452);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform:translate(-50%, -50%) ;
+
+
+    }
+    .community .header .search input::placeholder{
+        font-size: 12px;
+    }
+    .community .header .search input:focus{
+        outline: none;
+    }
+    .community .header .notifcation{
+
+        width: 130px; height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        /* background-color: #eee; */
+    }
+    .community .header .notifcation img{
+        width: 25px; height: 25px;
+        cursor: pointer;
+    }
+
+    /* ****************************************
+    ************styleing content  *************
+    ******************************************* */
+
+    .community .content{
+        position: relative;
+        height: auto; width: 100%;
+        top: 61px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+       }
+
+/* ****************************************
+************styleing side bar *************
+******************************************* */
+
+
+ .community .content .side-bar{
+    /* width: 300px; */
+    height: auto;
+    /* min-height: 500px; */
+    position: relative;
+    left: 0;
+    top:-150px;
+    position: relative;
+    background-color: #fff;
+    border-right: .7px solid rgba(0, 0, 0, 0.144);
+    /* box-sizing: content-box; */
+ }
+
+  .sidebar {
+      width: 260px;
+      background-color: #ffffff;
+      padding: 15px;
+      height: auto;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+  }
+
+  .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 5px 5px;
+      margin: 8px 0;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      color: #333;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+
+  .menu-item i {
+      margin-right: 12px;
+      color: #0FAB7D;
+  }
+
+  .menu-item:hover, .menu-item.active {
+      background-color: #0FAB7D;
+      color: white;
+  }
+
+  .menu-section {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #0f0f10;
+      text-transform: uppercase;
+      font-size: 14px;
+  }
+
+  .menu-section + .menu-item {
+      margin-top: 10px;
+  }
+
+  @media screen and (max-width: 810px) {
+    .community .content .side-bar {
+     display: none;
+    }
+  }
+
+/* **********************************************
+************styleing content center *************
+************************************************* */
+
+    /* .community .content .center{
+        width: calc(100% - 300px);
+        position: absolute;
+        right: 0;
+        top: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+    } */
+
+
+/* ********************************************
+************styleing left section *************
+********************************************** */
+
+    .community .content   .left{
+        background-color: #ffffff94;
+        width: 850px; height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .community .content   .left .new-post{
+        width: 500px; height: 60px;
+        background-color: #eee;
+        position: relative;
+    }
+    .community .content   .left .new-post input{
+        width: 100%;
+        height: 100%;
+        background-color: #eee;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .2);
+        border-radius: 5px;
+        /* border: .6px solid rgba(0, 0, 0, 0.452); */
+        border: 0;
+        padding: 0 60px ;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+    .community .content   .left .new-post input:focus{
+        outline: none;
+    }
+    .community .content   .left .new-post img{
+        width:  25px;
+        height: 25px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .community .content  .left .new-post .profile{
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform:translate(0%, -50%) ;
+    }
+    .community .content   .left .new-post .add{
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform:translate(0%, -50%) ;
+    }
+
+
+    .community .content   .left .linkedin-post {
+        margin-top: 20px;
+        background-color: #eee;
+        border-radius: 8px;
+        box-shadow: 0 3px 13px  rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 500px;
+    }
+
+    .community .content   .left .linkedin-post .post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .community .content   .left .linkedin-post  .profile-pic {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    .community .content   .left .linkedin-post .post-info h2 {
+        margin: 0;
+        color: #333;
+        font-size: 20px;
+    }
+
+    .community .content   .left .linkedin-post  .post-info p {
+        margin: 5px 0 0;
+        color: #666;
+        font-size: 12px;
+    }
+
+    .community .content  .left .linkedin-post  .post-content p {
+        font-size: 14px;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .community .content  .left .linkedin-post  .post-footer {
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .community .content   .left .linkedin-post  .post-footer p {
+        margin: 0;
+        color: #666;
+        font-size: 12px;
+    }
+
+    .community .content   .left .linkedin-post  .post-actions {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    .community .content   .left .linkedin-post  .post-actions div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+    }
+    .community .content   .left .linkedin-post  .post-actions div p{
+        position: relative;
+        top: 5px;
+        left: 10px;
+    }
+
+        .community .content   .left .linkedin-post .post-actions img {
+            width:  30px;
+            height: 30px;
+            margin-left: 20px;
+            background-color: #eee;
+            cursor: pointer;
+    }
+
+
+
+
+
+/* *********************************************
+************styleing right section *************
+*********************************************** */
+
+
+    .community .content   .right {
+        width: 350px;
+        position: relative;
+        /* top: 0; */
+        top: -470px;
+        right: 0px;
+        padding: 10px;
+        /* box-sizing: border-box; */
+    }
+    .community .content   .right .card {
+        background-color: #eee ;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 320px;
+    }
+    .community .content   .right .card h6{
+        color: rgba(0, 0, 0, 0.327);
+        position: relative;
+        top: -10px;
+    }
+
+    .community .content   .right .card h1 {
+        text-align: center;
+        font-size: 20px;
+        color: #333;
+    }
+
+    .community .content  .right .card .post {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-bottom: 10px;
+
+    }
+    .community .content   .right .card .post .top{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+    }
+
+    .community .content  .right .card .post img {
+        width: 40px;
+        height:40px;
+        margin-right: 20px;
+    }
+
+
+
+    .community .content  .right .card .post p {
+        margin: 5px 0 10px;
+        font-size: 10px;
+        font-weight: bold;
+        color: #666;
+    }
+    @media screen and (max-width: 1200px) {
+        .community .content .right {
+         display: none;
+        }
+      }
+
+

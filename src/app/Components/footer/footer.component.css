@@ -1,0 +1,149 @@
+/********************
+        Footer
+ ********************/
+ .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 65px;
+  background: linear-gradient(to left, #ffffff, #0fab7d, #004c81);
+  color: white;
+  padding: 35px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+.footer p {
+  margin-left: 25px;
+}
+.footer a {
+  color: white;
+  margin: 0 10px;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.left {
+  display: flex;
+  margin-left: 30px;
+}
+
+/********************
+  Social Media Icons
+ ********************/
+.social-icons {
+  color: #fff;
+  transition: color 0.2s ease-in-out;
+  margin-right: 100px;
+}
+.social-icons a {
+  color: white;
+  margin: 0px 20px;
+  font-size: 25px;
+}
+.social-icons a:hover {
+  transform: scale(1.1);
+  animation: pulse 0.5s ease-in-out;
+}
+
+.social-icons a:hover .fa-instagram {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.social-icons a:hover .fa-facebook {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.social-icons a:hover .fa-twitter {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.social-icons a:hover .fa-linkedin-in {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.social-icons .fa-facebook {
+  color: #3b5998; /* set the Facebook logo color */
+}
+
+.social-icons .fa-twitter {
+  color: #1da1f2; /* set the Twitter logo color */
+}
+
+.social-icons .fa-instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  background: -webkit-radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-icons .fa-linkedin-in {
+  color: #0077b5;
+}
+
+
+/* On small screens (xs) */
+@media (max-width: 575px) {
+  .footer {
+    font-size: 0.6rem;
+  }
+  .social-icons a{
+    flex-direction: column;
+    font-size: 0.7rem;
+  }
+  .social-icons{
+    margin-right:0px ;
+
+  }
+}
+
+/* On medium screens (md) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .footer {
+    font-size: 1rem;
+  }
+  .social-icons {
+    margin-right:0px ;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* On large screens (lg) */
+@media (min-width: 768px) {
+  .footer {
+    font-size: 1.2rem;
+  }
+  .social-icons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

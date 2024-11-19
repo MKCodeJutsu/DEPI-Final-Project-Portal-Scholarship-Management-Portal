@@ -1,0 +1,146 @@
+/************************************
+         Overall container
+ ***********************************/
+ .content {
+  display: flex; /* Using flexbox for layout */
+  flex-direction: column; /* Stacking items vertically */
+  align-items: center; /* Centering items horizontally */
+  margin-top: 50px; /* Space above the container */
+  background-color: #F7F7F7; /* Light gray background */
+  color: #004c81; /* Text color */
+  padding: 40px; /* Inner spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  padding: 0 30px; /* Horizontal inner spacing */
+  transform: scale(0.5); /* Initial scaling */
+  margin-top: -200px; /* Negative top margin for positioning */
+  filter: blur(5px); /* Blurring effect */
+  animation: revealAndZoom 1.5s ease-in-out forwards; /* Animation on load */
+}
+
+@keyframes revealAndZoom {
+  0% {
+      transform: scale(0.5); /* Starting scale */
+      margin-top: -200px; /* Starting position */
+      filter: blur(5px); /* Starting blur */
+  }
+  50% {
+      transform: scale(1); /* Midway scale */
+      margin-top: 0; /* Position at 50% */
+      filter: none; /* No blur at 50% */
+  }
+  100% {
+      transform: scale(1); /* Final scale */
+      margin-top: 0; /* Final position */
+      filter: none; /* No blur at end */
+  }
+}
+
+/************************************
+       Header styling
+***********************************/
+.header {
+  font-style: arial; /* Font style */
+  font-size: 30px; /* Font size */
+  font-weight: 700; /* Bold font */
+  color: #004A7C; /* Header text color */
+  height: 133px; /* Fixed height */
+  width: 756px; /* Fixed width */
+  left: 800px; /* Left position */
+  line-height: 21px; /* Line height */
+  margin-bottom: 10px; /* Space below header */
+  width: 100%; /* Full width */
+  text-align: left; /* Align text to the left */
+  padding-top: 50px; /* Space above header */
+}
+
+/************************************
+       Images section styling
+***********************************/
+.images-section {
+  display: flex; /* Using flexbox for layout */
+  flex-direction: row; /* Row layout for images */
+  justify-content: space-between; /* Space between items */
+  width: 100%; /* Full width */
+  max-width: 800px; /* Maximum width */
+  margin-bottom: 20px; /* Space below section */
+  padding: 0 60px; /* Horizontal padding */
+}
+
+.image-item {
+  width: 100%; /* Full width for image item */
+  text-align: center; /* Center text inside item */
+}
+
+.network-image {
+  width: 100%; /* Full width for network image */
+  max-width: 800px; /* Maximum width */
+}
+
+/************************************
+       Responsive media queries
+***********************************/
+
+/* Large screens (Desktops) */
+@media (min-width: 1200px) {
+  .content {
+      padding: 60px; /* Increased padding */
+  }
+  .header {
+      font-size: 36px; /* Larger header font */
+  }
+  .images-section {
+      padding: 0 80px; /* More padding */
+  }
+}
+
+/* Medium screens (Laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .content {
+      padding: 40px; /* Standard padding */
+  }
+  .header {
+      font-size: 32px; /* Slightly larger header font */
+  }
+  .images-section {
+      padding: 0 60px; /* Standard padding */
+  }
+}
+
+/* Small screens (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .content {
+      padding: 30px; /* Reduced padding */
+  }
+  .header {
+      font-size: 28px; /* Smaller header font */
+  }
+  .images-section {
+      flex-direction: column; /* Stack images vertically */
+      padding: 0 40px; /* Reduced padding */
+  }
+  .image-item {
+      margin-bottom: 20px; /* Space below each image */
+  }
+}
+
+/* Extra small screens (Mobiles) */
+@media (max-width: 767px) {
+  .content {
+      padding: 20px; /* Minimal padding */
+  }
+  .header {
+      font-size: 24px; /* Smallest header font */
+      padding-top: 20px; /* Space above header */
+  }
+  .images-section {
+      flex-direction: column; /* Stack images vertically */
+      padding: 0 20px; /* Minimal padding */
+  }
+  .image-item {
+      margin-bottom: 10px; /* Space below each image */
+  }
+  .network-image {
+      max-width: 100%; /* Full width on small screens */
+  }
+}

@@ -1,0 +1,77 @@
+<!-- Page Navbar - Sid -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="depi">
+      <button class="navbar-toggler" (click)="toggleSidebar()" type="button" title="toggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <img src="/assets/images/dashboard/depi.png" alt="">
+    </div>
+
+    <!-- Sidebar -->
+    <div >
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile"> {{getUsername()}} </a>
+          <i style="font-size: 30px;" class="fas fa-user-circle"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="sidebar" [class.open]="isSidebarOpen">
+  <div>
+    <a [routerLink]="[ '/home' ]" routerLinkActive="active"><i class="fas fa-home"></i> Home</a>
+  <a [routerLink]="[ '/agenda' ]" routerLinkActive="active"><i class="fas fa-calendar-alt"></i> My Agenda</a>
+  <a [routerLink]="[ '/project' ]" routerLinkActive="active"><i class="fa-solid fa-diagram-project"></i> Ongoing Projects</a>
+  <a [routerLink]="[ '/quiz' ]" routerLinkActive="active"><i class="fas fa-question-circle"></i> Quiz Assessments</a>
+  <a [routerLink]="[ '/learning' ]" routerLinkActive="active"><i class="fas fa-book"></i> Learning Materials</a>
+  <a [routerLink]="[ '/concepts' ]" routerLinkActive="active"><i class="fas fa-key"></i> Key Concepts</a>
+  <a [routerLink]="[ '/streaming' ]" routerLinkActive="active"><i class="fas fa-play-circle"></i> Streaming Lessons</a>
+  </div>
+  <a [routerLink]="[ '/track' ]" routerLinkActive="active"><i class="fa-solid fa-up-right-from-square"></i>Return to Portal</a>
+</div>
+
+<!-- Page Content -->
+<div class="content closed">
+  <div class="content-head">
+    <h5>Curriculum</h5>
+<h2>Frontend Web Development - Angular</h2>
+<p>Average: 95.51%</p>
+  </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Plans</h5>
+                <p class="card-text plan"><i class="fas fa-calendar-alt"></i> No upcoming event</p>
+
+            </div>
+            <a [routerLink]="['/agenda']" class="card-link">View all</a>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Projects</h5>
+                <p class="card-text">E-Commerce Web App<br>Student Directory<br>Portfolio</p>
+
+            </div>
+            <a [routerLink]="['/project']" class="card-link">View all</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Performance Metrics <span class="badge">Verified</span></h5>
+                <p class="card-text">Frontend Web Development - Angular</p>
+                <div class="progress mb-2">
+                    <div class="progress-bar" role="progressbar" style="width: 95.51%;" aria-valuenow="95.51" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="card-text">Graduated <i style="margin-left: 5px; color: #0FAB7D;" class="fa-solid fa-graduation-cap"></i> <span class="float-end">95.51%</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

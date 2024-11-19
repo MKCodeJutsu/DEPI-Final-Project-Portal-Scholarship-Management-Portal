@@ -1,0 +1,135 @@
+/********************
+    Page Container
+ ********************/
+ #container {
+  height: 100vh;
+  width: 100vw;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/********************
+        Login
+ ********************/
+
+.login-container {
+  background: linear-gradient(to bottom, #0fab7cc4, #004b81e0);
+  max-width: 900px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  opacity: 95%;
+  transform: scale(0.5);
+  margin-top: -200px;
+  filter: blur(5px);
+  animation: revealAndZoom 1.5s ease-in-out forwards;
+}
+@keyframes revealAndZoom {
+  0% {
+    transform: scale(0.5);
+    margin-top: -200px;
+    filter: blur(5px);
+  }
+  50% {
+    transform: scale(1);
+    margin-top: 0;
+    filter: none;
+  }
+  100% {
+    transform: scale(1);
+    margin-top: 0;
+    filter: none;
+  }
+}
+.login-left {
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  flex: 1;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+}
+.login-left img {
+  max-width: 100%;
+  height: auto;
+}
+.login-logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+.login-left h2 {
+  font-size: 20px !important;
+  background: -webkit-linear-gradient(left, #0fab7d, #004c81);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font: bold 1em Arial, Helvetica, sans-serif;
+}
+.login-left p {
+  font-size: 18px;
+  background: -webkit-linear-gradient(right, #0fab7d, #004c81);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font: bold 1em Arial, Helvetica, sans-serif;
+}
+
+.login-right {
+  padding: 30px;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-right .text-center a {
+  display: flex;
+}
+.login-right .btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.login-right .form-control {
+  margin-bottom: 10px;
+}
+
+
+/* Extra Small Devices (phones, 320px and up) */
+@media (max-width: 319px) {
+  /* Your CSS for very small devices */
+  .login-right button{
+    margin-bottom: 10px;
+    width: 150px !important;
+    font-size: 11px;
+  }
+  .login-right p {
+    font-size: 8px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Small Devices (phones, 320px to 480px) */
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Your CSS for small devices */
+  .login-right button{
+    margin-bottom: 10px;
+    width: 150px !important;
+    font-size: 11px;
+  }
+
+  .login-right p {
+    font-size: 8px;
+    margin-bottom: 10px;
+  }
+  .login-right input {
+    height: 25px;
+  }
+}
+
+/* Medium Devices (landscape phones, 481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Your CSS for medium devices */
+}

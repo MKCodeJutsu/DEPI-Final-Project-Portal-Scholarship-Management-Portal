@@ -1,0 +1,293 @@
+/* ///////////////////// */
+.page {
+  transform: scale(0.5);
+  margin-top: -200px;
+  filter: blur(5px);
+  animation: revealAndZoom 1.5s ease-in-out forwards;
+}
+
+@keyframes revealAndZoom {
+  0% {
+    transform: scale(0.5);
+    margin-top: -200px;
+    filter: blur(5px);
+  }
+  50% {
+    transform: scale(1);
+    margin-top: 0;
+    filter: none;
+  }
+  100% {
+    transform: scale(1);
+    margin-top: 0;
+    filter: none;
+  }
+}
+
+/************************************
+         Container Styling
+ ***********************************/
+#container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.part1 img {
+  max-width: 100vw;
+}
+
+/************************************
+         Contact Section
+ ***********************************/
+.contact {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+/************************************
+         DEPI Section
+ ***********************************/
+.DEPI {
+  width: 80%;
+  background-color: #f3f7f5;
+  margin: auto;
+  padding: 30px 50px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+.DEPI h2 {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #2e2e2e;
+}
+.DEPI h3 span {
+  color: #3b82f6;
+  font-size: 30px;
+}
+.DEPI h3 {
+  color: #2e2e2e;
+  font-size: 22px;
+}
+.DEPI p {
+  padding-left: 10px;
+  color: #2e2e2e;
+  font-size: 14px;
+}
+.DEPI h6 {
+  font-size: 16px;
+  color: #2e2e2e;
+}
+
+/************************************
+         Rewards Section
+ ***********************************/
+.rewards {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  gap: 40px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+.rewards .detail {
+  width: 50%;
+  box-shadow: 0px 0px 5px 1px #0fab7d;
+  border: solid 1px #0fab7d;
+  border-radius: 15px;
+  background-color: #ffffff;
+  background-position: bottom;
+}
+.rewards .detail img {
+  width: 100%;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+.rewards .detail .text {
+  padding: 20px 20px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.line {
+  height: 15px;
+  background-color: #c1c1c1;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.line::after {
+  content: "";
+  border-radius: 18px 0px 0px 18px;
+  height: 15px;
+  position: absolute;
+  width: 40%;
+  background: linear-gradient(to left, #0fab7d, #004c81);
+  transition: left 0.5s ease;
+}
+
+.rewards .detail .text a {
+  text-decoration: none;
+  font-size: 16px;
+  background: linear-gradient(to left, #0fab7d, #004c81);
+  font-weight: 500;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.rewards .details {
+  background-color: chocolate;
+  height: 50px;
+}
+
+/************************************
+         Text Styling
+ ***********************************/
+.text h5 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.text h5 span {
+  margin-left: 30px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: #0fab7d 1px solid;
+  font-size: 10px;
+  color: #0fab7d;
+}
+.text p {
+  padding-top: 10px;
+  font-size: 13px;
+  color: #2e2e2e;
+  font-weight: 500px;
+}
+
+/************************************
+         Navigation and Pagination
+ ***********************************/
+.next-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.pages {
+  align-items: right;
+  text-align: right;
+  margin-top: -40px;
+}
+.pages span {
+  background-color: rgb(255, 255, 255);
+  padding: 2px 15px;
+  margin: 8px;
+  border-radius: 3px;
+}
+
+.arrow {
+  background-color: #ffffff;
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
+  text-decoration: none;
+  border: 2px solid #0FAB7D;
+  align-items: center;
+  color: #0FAB7D;
+}
+
+.next {
+  text-decoration: none;
+  font-size: 16px;
+  background: linear-gradient(to left, #0fab7d, #004c81);
+  font-weight: 500;
+  color: white;
+  padding: 10px 10px 10px 30px;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 0px 50px;
+}
+
+.next i {
+  margin-left: 40px;
+}
+
+/************************************
+         Responsive Styling
+ ***********************************/
+@media (max-width: 991px) {
+
+  .contact {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .DEPI {
+    margin: 100px;
+    width: 100%;
+    padding: 20px;
+    margin: 0px;
+    margin-bottom: 40px;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  .rewards {
+    display: block;
+    margin-bottom: 35px;
+  }
+  .rewards .detail {
+    margin: auto;
+    display: block;
+    width: 90%;
+    margin-bottom: 15px;
+  }
+  .next {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+  }
+  .next-sec {
+    display: flex;
+    flex-direction: column;
+  }
+  .pages {
+    font-size: 2px;
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 120px;
+  }
+  .pages span {
+    background-color: rgb(255, 255, 255);
+    padding: 2px 8px;
+    margin: 5px;
+    border-radius: 3px;
+  }
+  .arrow {
+    display: none;
+  }
+  .text h5 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+}

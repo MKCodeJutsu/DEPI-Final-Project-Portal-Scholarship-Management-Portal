@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="depi">
+      <button class="navbar-toggler" (click)="toggleSidebar()" type="button" title="toggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <img src="/assets/images/dashboard/depi.png" alt="">
+    </div>
+    <div >
+      <!-- Remove the navbar class here -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile"> {{getUsername()}} </a>
+          <i style="font-size: 30px;" class="fas fa-user-circle"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="sidebar" [class.open]="isSidebarOpen">
+  <div>
+    <a [routerLink]="[ '/home' ]" routerLinkActive="active"><i class="fas fa-home"></i> Home</a>
+  <a [routerLink]="[ '/agenda' ]" routerLinkActive="active"><i class="fas fa-calendar-alt"></i> My Agenda</a>
+  <a [routerLink]="[ '/project' ]" routerLinkActive="active"><i class="fa-solid fa-diagram-project"></i> Ongoing Projects</a>
+  <a [routerLink]="[ '/quiz' ]" routerLinkActive="active"><i class="fas fa-question-circle"></i> Quiz Assessments</a>
+  <a [routerLink]="[ '/learning' ]" routerLinkActive="active"><i class="fas fa-book"></i> Learning Materials</a>
+  <a [routerLink]="[ '/concepts' ]" routerLinkActive="active"><i class="fas fa-key"></i> Key Concepts</a>
+  <a [routerLink]="[ '/streaming' ]" routerLinkActive="active"><i class="fas fa-play-circle"></i> Streaming Lessons</a>
+  </div>
+  <a [routerLink]="[ '/track' ]" routerLinkActive="active"><i class="fa-solid fa-up-right-from-square"></i>Return to Portal</a>
+</div>
+
+
+<div class="content">
+  <div class="content-head">
+<h2>Streaming Lessons</h2>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-body">
+
+        <p class="card-text"><i class="fas fa-play-circle"></i>
+          No live lessons at the moment... Check back soon for more!</p>
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,187 @@
+/************************************
+         Container Styles
+ ************************************/
+.container {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+/************************************
+         Content Styles
+ ************************************/
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #F7F7F7;
+  color: #2e2e2e;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(0.5);
+  margin-top: -200px;
+  filter: blur(5px);
+  animation: revealAndZoom 1.5s ease-in-out forwards;
+}
+
+/************************************
+        Keyframes for Animation
+ ************************************/
+@keyframes revealAndZoom {
+  0% {
+    transform: scale(0.5);
+    margin-top: -200px;
+    filter: blur(5px);
+  }
+  50% {
+    transform: scale(1);
+    margin-top: 0;
+    filter: none;
+  }
+  100% {
+    transform: scale(1);
+    margin-top: 0;
+    filter: none;
+  }
+}
+
+/************************************
+         Courses Styles
+ ************************************/
+.courses {
+  background-color: #eee !important;
+  position: relative;
+}
+
+.courses::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  background-color: #10aa7c;
+}
+
+/************************************
+         Dashboard Link Styles
+ ************************************/
+.dash {
+  color: #10aa7c !important;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.dash:hover {
+  transform: scale(1.1);
+}
+
+/************************************
+         Courses Hover Styles
+ ************************************/
+.courses:hover {
+  background-color: #eef7f3;
+}
+
+/************************************
+         Get Support Button Styles
+ ************************************/
+.get-support {
+  background-color: #10aa7c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: left;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.get-support:hover {
+  background-color: #004A7C;
+  transform: scale(1.05);
+}
+
+/************************************
+         Logo Styles
+ ************************************/
+.logo {
+  width: 100px !important;
+}
+
+/************************************
+       Category Header Styles
+ ************************************/
+.catwgory-header {
+  padding-top: 50px;
+  font-style: arial;
+  color: #004c81;
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/************************************
+         Button Styles
+ ************************************/
+button {
+  box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.2) !important;
+  margin-top: 20px !important;
+}
+
+/************************************
+         Category Description Styles
+ ************************************/
+.category-des {
+  color: #2E2E2E;
+}
+
+/************************************
+         Heading Styles
+ ************************************/
+h6 {
+  font-style: arial;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+/************************************
+         Text Muted Styles
+ ************************************/
+.text-muted {
+  font-weight: 400;
+}
+
+/************************************
+         Anchor Link Styles
+ ************************************/
+a {
+  float: right;
+  margin-right: 80px;
+  margin-bottom: 20px;
+}
+
+/************************************
+         Support Button Styles
+ ************************************/
+.get-support .btn {
+  float: left;
+}
+
+/************************************
+         Main Heading Styles
+ ************************************/
+h1 {
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+/************************************
+         Paragraph Styles
+ ************************************/
+p {
+  color: #2e2e2e !important;
+  font-size: 15px;
+}

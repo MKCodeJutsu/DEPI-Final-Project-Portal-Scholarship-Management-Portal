@@ -1,0 +1,396 @@
+<div class="wrapper container mt-5 justify-content-center ">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card profile-card">
+        <!-- Cover Picture Section -->
+        <div class="cover" (click)="onCoverPicClick()">
+          <input
+            type="file"
+            id="cover-pic-upload"
+            (change)="onCoverPicUpload($event)"
+            hidden
+          />
+          <img
+            alt="Cover Picture"
+            [src]="coverPicUrl"
+            width="100"
+            height="300"
+          />
+          <button type="button" (click)="onCoverPicClick()">
+            <i class="fas fa-image"></i>
+          </button>
+        </div>
+
+        <!-- Profile Picture Section -->
+        <div class="profile-picture" (click)="onProfilePicClick()">
+          <input
+            type="file"
+            id="profile-pic-upload"
+            (change)="onProfilePicUpload($event)"
+            hidden
+          />
+          <img
+            alt="Profile Picture"
+            height="100"
+            [src]="profilePicUrl"
+            width="100"
+            (click)="onProfilePicClick()"
+          />
+          <button type="button" (click)="onProfilePicUpload($event)">
+            <i class="fas fa-camera"></i>
+          </button>
+        </div>
+
+        <div class="info">
+          <!-- Username -->
+          <div class="username">
+            <h2>{{ getUsername() }}</h2>
+            <i
+              type="button"
+              (click)="openModal(editModal, '')"
+              class="fas fa-edit edit-icon"
+            ></i>
+          </div>
+
+          <!-- Job Title -->
+          <div class="contact-info">
+            <h3>{{ jobTitle }}</h3>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="contact-info">
+            <i class="fas fa-phone"></i> {{ phone }}
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="contact-info">
+            <i class="fab fa-linkedin"></i> {{ linkedinUsername }}
+            <i class="fas fa-clone clone-icon"></i>
+          </div>
+
+          <!-- GitHub -->
+          <div class="contact-info">
+            <i class="fab fa-github"></i> {{ githubUsername }}
+            <i class="fas fa-clone clone-icon"></i>
+          </div>
+        </div>
+
+        <!--Edit Modal -->
+        <ng-template #editModal let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Profile Information</h4>
+            <button type="button" class="close" (click)="modal.dismiss()">
+              ×
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="userName">Username</label>
+              <input
+                [(ngModel)]="tempUsername"
+                id="username"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="jobTitle">Job Title</label>
+              <input
+                [(ngModel)]="tempJobTitle"
+                id="jobTitle"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input [(ngModel)]="tempPhone" id="phone" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="linkedin">LinkedIn Username</label>
+              <input
+                [(ngModel)]="tempLinkedIn"
+                id="linkedin"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="github">GitHub Username</label>
+              <input
+                [(ngModel)]="tempGitHub"
+                id="github"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              (click)="saveChanges(); modal.close()"
+            >
+              Save
+            </button>
+            <button class="btn btn-secondary" (click)="modal.dismiss()">
+              Cancel
+            </button>
+          </div>
+        </ng-template>
+      </div>
+
+      <!-- Bio Section with Modals -->
+      <div class="card p-3 position-relative">
+        <h4>Bio</h4>
+        <div class="bio-content" id="bio-content">
+          <span id="bio-text">{{
+            bio || "Add a short bio about yourself..."
+          }}</span>
+        </div>
+        <button (click)="openBioModal(bioModal)">
+          <i class="fas fa-edit edit-icon"></i>
+        </button>
+      </div>
+
+      <!-- Modal HTML -->
+      <ng-template #bioModal let-modal>
+        <div class="modal-header">
+          <h5 class="modal-title">Add/Edit Bio</h5>
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <textarea [(ngModel)]="tempInput" class="form-control" rows="5">{{
+            bio
+          }}</textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="modal.close()">
+            Save
+          </button>
+          <button class="btn btn-secondary" (click)="modal.dismiss()">
+            Cancel
+          </button>
+        </div>
+      </ng-template>
+
+      <!-- Education Section with Modals -->
+      <div class="edu card p-3 position-relative">
+        <h4>Education</h4>
+        <div *ngFor="let education of educationList; let i = index">
+          <p>
+            {{ education.name }} ({{ education.startDate }} -
+            {{ education.endDate }})
+          </p>
+        </div>
+        <button (click)="openModal(addEducationModal, '')">
+          <i class="fas fa-edit edit-icon"></i>
+        </button>
+      </div>
+
+      <!-- Modal HTML -->
+      <ng-template #addEducationModal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Add New Education</h4>
+          <button
+            type="button"
+            class="btn-close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <input
+            [(ngModel)]="newEducation.name"
+            placeholder="School/University"
+            class="form-control"
+          />
+          <input
+            [(ngModel)]="newEducation.startDate"
+            placeholder="Entry Year"
+            class="form-control"
+          />
+          <input
+            [(ngModel)]="newEducation.endDate"
+            placeholder="Graduation Year"
+            class="form-control"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            (click)="addEducationToList(); modal.close()"
+          >
+            Save
+          </button>
+          <button class="btn btn-secondary" (click)="modal.dismiss()">
+            Cancel
+          </button>
+        </div>
+      </ng-template>
+
+      <!-- Experience Section with Modals -->
+      <div class="exp card p-3 position-relative">
+        <h4>Experience</h4>
+        <div *ngFor="let experience of experienceList; let i = index">
+          <p>
+            {{ experience.company }} ({{ experience.startDate }} -
+            {{ experience.endDate }})
+          </p>
+        </div>
+        <button (click)="openModal(addExperienceModal, '')">
+          <i class="fas fa-edit edit-icon"></i>
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <ng-template #addExperienceModal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Add New Experience</h4>
+          <button
+            type="button"
+            class="btn-close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <input
+            [(ngModel)]="newExperience.company"
+            placeholder="Company Name"
+            class="form-control"
+          />
+          <input
+            [(ngModel)]="newExperience.startDate"
+            placeholder="Start Date"
+            class="form-control"
+          />
+          <input
+            [(ngModel)]="newExperience.endDate"
+            placeholder="End Date"
+            class="form-control"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            (click)="addExperienceToList(); modal.close()"
+          >
+            Save
+          </button>
+          <button class="btn btn-secondary" (click)="modal.dismiss()">
+            Cancel
+          </button>
+        </div>
+      </ng-template>
+    </div>
+
+    <!-- CV Section with Modal -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h4>Your CV</h4>
+        <div class="upload-section">
+          <span
+            ><input type="file" id="upload-cv" (change)="onCVUpload($event)" />
+          </span>
+          <span
+            ><label for="upload-cv"
+              >Click to upload or drag and drop</label
+            ></span
+          >
+        </div>
+      </div>
+
+      <!-- Portfolio Section with Modal  -->
+      <div class="card p-3 position-relative">
+        <h4>Your Portfolio</h4>
+        <div class="portfolio" id="portfolio-content">
+          <span id="portfolio-text">{{
+            portfolio || "Add your Portfolio link..."
+          }}</span>
+        </div>
+        <span
+          ><button (click)="openModal(portfolioModal, 'portfolio')">
+            <i class="fas fa-edit edit-icon"></i></button
+        ></span>
+      </div>
+
+      <!-- Modal -->
+      <ng-template #portfolioModal let-modal>
+        <div class="modal-header">
+          <h5 class="modal-title">Add/Edit Portfolio</h5>
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <textarea [(ngModel)]="tempInput" class="form-control" rows="3">{{
+            portfolio
+          }}</textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="modal.close()">
+            Save
+          </button>
+          <button class="btn btn-secondary" (click)="modal.dismiss()">
+            Cancel
+          </button>
+        </div>
+      </ng-template>
+
+      <!-- Languages Section with Modals -->
+      <div class="card p-3 position-relative languages">
+        <h4>Languages</h4>
+        <div *ngFor="let language of languagesList; let i = index">
+          <p>{{ language.name }}: {{ language.level }}</p>
+        </div>
+        <button (click)="openModal(addLanguageModal, '')">
+          <i class="fas fa-edit edit-icon"></i>
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <ng-template #addLanguageModal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Add New Language</h4>
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <input
+            [(ngModel)]="newLanguage.name"
+            placeholder="Language"
+            class="form-control"
+          />
+          <input
+            [(ngModel)]="newLanguage.level"
+            placeholder="Proficiency Level"
+            class="form-control"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-primary"
+            (click)="addLanguageToList(); modal.close()"
+          >
+            Save
+          </button>
+          <button class="btn btn-secondary" (click)="modal.dismiss()">
+            Cancel
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

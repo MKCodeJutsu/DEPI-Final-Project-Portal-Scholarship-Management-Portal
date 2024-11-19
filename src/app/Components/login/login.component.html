@@ -1,0 +1,29 @@
+<div id="container" class="wrapper">
+  <div class="container login-container">
+    <div class="login-left">
+      <img class="login-logo" src="/assets/images/login/depi-logo.png" alt="depiPNG">
+        <h2>WELCOME TO YOUR PORTAL</h2>
+        <p>Sign in to get started</p>
+        <img src="/assets/images/login/login.png" alt="Illustration of a person working on a computer at a desk">
+
+    </div>
+    <form class="login-right" (ngSubmit)="login()">
+        <button class="btn btn-light btn-block">
+            <i class="fab fa-microsoft"></i> Sign in with Microsoft
+        </button>
+        <button class="btn btn-light btn-block">
+            <i class="fab fa-google"></i> Sign in with Google
+        </button>
+        <p class="text-center">or</p>
+        <input class="form-control" name="username" [(ngModel)]="username" placeholder="Username" type="email">
+        <input class="form-control" name="password" [(ngModel)]="password" placeholder="Password" type="password">
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        <p class="text-center mt-3">
+          If you are having a trouble logging in, please contact
+          <a href="mailto:depi@support.com"> DEPI Support </a>
+      </p>
+        <p class="text-center mt-3">{{ errorMessage }}</p>
+
+    </form>
+</div>
+</div>
